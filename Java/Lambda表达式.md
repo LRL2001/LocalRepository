@@ -30,3 +30,22 @@ fruits.forEach((Fruit f) -> {
 ### forEach()
 forEach()表示循环遍历当前集合  
 
+### 双冒号(::)操作符
+例如：
+```System.out::println()```  
+语法含义：
+![双冒号](../Pic/lambda2.png "双冒号")
+其中   
+```println```是方法名  
+#### 调用方法
+##### 1. 调用静态方法
+```LambdaTest::print```代替```f -> LambdaTest.print(f)```
+##### 2. 调用非静态方法
+```
+LambdaTest lt = new LambdaTest();
+fruits.forEach(lt::print);
+//也可以简写成下面这种形式
+fruits.forEach(new LambdaTest()::print);
+```
+
+
