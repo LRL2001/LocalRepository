@@ -37,6 +37,7 @@ Stream<String>stream=fruits.stream();
 ```
 stream.forEach(System.out::println);
 ```
+##### 聚合操作
 1. 过滤 ```filter()```
 2. 映射 ```map()```
 3. 排序 ```sorted()```
@@ -104,3 +105,43 @@ numbers.stream()
     .forEach(System.out::println);
 ```
 >*```limit```的作用是返回流开头的前n个元素*
+
+### 流合并（```reduce()方法```）
+```
+Student result = students.stream()
+    .reduce(new Student("", 0),
+        (a, b) -> {
+            a.setMidtermScore(a.getMidtermScore() + b.getMidtermScore());
+            return a;
+        }
+    );
+
+System.out.println(result.getName() + " - " + result.getMidtermScore());
+```
+>- 第一个参数，是作为缓存角色的对象  
+>- 第二个参数，是lambda表达式，完成计算。
+>- 因此，当有第一个参数时  
+>   - a变量就不再指代流中的第一个参数了，专门指代缓存角色的对象，即reduce方法的第一个参数对象（例子中也就是```Student("",0)```）  
+>   - b变量依次指代流中的每个元素，包括第一个元素
+
+### 流合并（```collect()方法```）
+```
+import java.util.stream.Collectors;
+
+List<String> numResult = numbers.stream()
+    .sorted((n1, n2) -> n2 - n1)
+    .limit(3)
+    .map(a -> "" + a)
+    .collect(Collectors.toList());
+
+String string = String.join("-", numResult);
+System.out.println("字符串是: " + string);
+```
+>本例中`collect()`方法就是将流中收集的元素存放到`numResult`这个`String`类型的`List`集合中去，而`collect()`方法的参数`Collectors.toList()`就是将`stream`类型转化成`List`类型  
+
+>为了能够把最终结果转化为字符串打印输出调用了`map()`方法把流中原来的整数映射成字符串`(""+a)`
+
+### 并行流（`parallelStream()`）
+改变串行计算模式，改为并行计算模式
+其余和串行一样
+>**注意：当流中每个数据元素之间有逻辑依赖关系时不能使用并行计算，会出bug**
