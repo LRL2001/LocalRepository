@@ -7,7 +7,7 @@ Lambda、流、函数式编程
 ```
 f->{}
 ```
-![Lambda表达式的基本结构](/Pic/Lambda表达式.png "Lambda表达式")  
+![Lambda表达式的基本结构](/Pic/Lambda表达式.svg "Lambda表达式")  
 
 >Lambda表达式相当于一个匿名方法，但它将方法名和public void全部省略了  
 
@@ -33,8 +33,8 @@ forEach()表示循环遍历当前集合
 ### 双冒号(::)操作符
 例如：
 ```System.out::println()```  
-语法含义：
-![双冒号](../Pic/lambda2.png "双冒号")
+语法含义：  
+![双冒号](../Pic/Lambda表达式双冒号.svg "双冒号")  
 其中   
 ```println```是方法名  
 #### 调用方法
