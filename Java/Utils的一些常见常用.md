@@ -28,9 +28,9 @@ students.add(new Student(121, "cccc", "jaipur"));
 ### 随机数`Random()`
 ```
 Random r=new Random();
-r.nextInt(101)
+r.nextInt(101);
 ```
 >*以上代码表示0-100的随机整数*  
 >*不带参数的nextInt()会生成所有有效的整数（包含正数，负数，0）*  
->*带参的nextInt(int x)则会生成一个范围在0~x（不包含X）内的任意整数*
->*`randomInt(10,20)`;则会生成一个[10,20]集合内的任意整数*
+>*带参的nextInt(int x)则会生成一个范围在0~x（不包含X，包含0）的任意整数*
+>*`int x=new Random.nextInt(100);`;则x为一个0~99的任意整数*
