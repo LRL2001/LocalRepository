@@ -22,7 +22,7 @@ String[] fruitArray = new String[] {"苹果","西瓜","哈密瓜","菠萝"}
 Stream<String> stream = Stream.of(fruitArray);
 ```
 #### 由集合转化
-```
+```java
 import java.util.stream.Stream;
 
 List<String>fruits=Arrays.asList(
@@ -44,7 +44,7 @@ stream.forEach(System.out::println);
 4. 摘取 ```limit()```  
 
 例如：
-```
+```java
  pupils.stream()
         .filter(pupil->pupil.getAverageScore()>=80&&pupil.getViolationCount()<1)
         .map(pupil -> {

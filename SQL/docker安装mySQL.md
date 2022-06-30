@@ -35,4 +35,3 @@ mysql -uroot
 
 输入```\quit```后显示Bye
 再输入```exit```回到终端
-
