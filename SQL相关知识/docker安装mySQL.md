@@ -30,7 +30,9 @@ sudo docker exec -it mysql bash
 mysql -uroot
 ```
 此时显示的界面```mysql>```后面是可以继续输入sql语句的
-
+```
+CREATE DATABASE youkedadb;
+```
 ### 登出MySQL的命令：
 
 输入```\quit```后显示Bye
