@@ -28,3 +28,10 @@ mysql -h 192.168.0.1 -uroot -Dyoukedadb -e 'select * from timi_adc;'
 ```
 mysql -h 192.168.0.1 -uroot -Dyoukedadb < index.sql;
 ```
+
+### SSM连接阿里云MySQL
+```
+spring.datasource.url=jdbc:mysql://rm-bp1gh73i96488211jpo.mysql.rds.aliyuncs.com:3306/comment?serverTimezone=GMT%2B8
+spring.datasource.username=lrl
+spring.datasource.password=LRLlrl123
+```
