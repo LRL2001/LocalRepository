@@ -35,3 +35,11 @@ spring.datasource.url=jdbc:mysql://rm-bp1gh73i96488211jpo.mysql.rds.aliyuncs.com
 spring.datasource.username=lrl
 spring.datasource.password=LRLlrl123
 ```
+```
+# Redis服务器地址
+spring.redis.host=8.136.13.152
+# Redis 服务器端口号
+spring.redis.port=6379
+# Redis 服务器密码 （请换成自己机器密码）
+spring.redis.password=qwerty,098
+```

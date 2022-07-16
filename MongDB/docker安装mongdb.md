@@ -11,5 +11,25 @@ sudo docker exec -it mongo mongo admin
 ```
 sudo docker ps
 ```
+```
+use admin
+db.createUser({
+    user:'lrl',
+    pwd:'123',
+    roles:[
+    {role:'userAdminAnyDatabase',db:'admin'},
+    {role:'dbAdminAnyDatabase',db:'admin'},
+    {role:'clusterMonitor',db:'admin'}
+    ]
+})
+```
+```
+spring.data.mongodb.host=8.136.13.152
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=practice
+spring.data.mongodb.username=lrl
+spring.data.mongodb.password=123
 
+logging.level.root=info
+```
 
